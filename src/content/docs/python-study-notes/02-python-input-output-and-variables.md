@@ -68,6 +68,11 @@ input("请输入一个数字：")
 
 能进行输入之后我们要能够存放并且将其随时取用，就需要定义一个变量，并且将其打印出来
 
+```python
+number = input("请输入一个数字：")
+print(number)
+```
+
 ![](https://pic.ivoinkwell.xyz/file/docs/python-study-notes/02-python-input-output-and-variables/02-python-input-output-and-variables-6.webp)
 
 ### 案例 - 电话号码缴费
