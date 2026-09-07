@@ -90,6 +90,7 @@ export default defineConfig({
 					items: [
 						{ label: '总览', link: '/python-study-notes/' },
 						{ label: '01 - Python及开发环境安装', link: '/python-study-notes/01-python-and-development-environment-installation/' },
+						{ label: '02 - Python输入输出与变量', link: '/python-study-notes/02-python-input-output-and-variables/' }
 					],
 				},
 				{
