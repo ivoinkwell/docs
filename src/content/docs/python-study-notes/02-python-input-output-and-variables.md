@@ -48,6 +48,10 @@ print("I'm a student")
 
 所以也可以写成这样
 
+```python
+print('I\'m a student')
+```
+
 ![](https://pic.ivoinkwell.xyz/file/docs/python-study-notes/02-python-input-output-and-variables/02-python-input-output-and-variables-4.webp)
 
 ## 输入与变量
