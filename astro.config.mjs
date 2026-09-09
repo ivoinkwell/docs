@@ -125,6 +125,7 @@ export default defineConfig({
 					items: [
 						{ label: '总览', link: '/software-testing-study-notes/' },
 						{ label: '01 - 根据需求说明书编写测试用例', link: '/software-testing-study-notes/01-write-test-cases-based-on-the-requirements-specification/' },
+						{ label: '02 - 利用等价类划分编写测试用例', link: '/software-testing-study-notes/02-write-test-cases-using-equivalence-class-division/' },
 					],
 				},
 				{
