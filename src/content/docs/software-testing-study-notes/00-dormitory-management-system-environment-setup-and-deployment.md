@@ -123,6 +123,12 @@ SET GLOBAL validate_password_length=4;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
 ```
 
+导入 `sql` 文件
+
+```bash
+mysql -uroot -p < /root/dormitory.sql
+```
+
 复制 tomcat至随意目录，我的是 `/root`
 
 修改这个文件 `/root/tomcat/webapps/dormitory/WEB-INF/classes/db.properties`
