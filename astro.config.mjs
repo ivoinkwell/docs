@@ -176,6 +176,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: '6.15 数据安全刷题笔记', link: '/cybersecurity-and-data-security/data-security-6-15-note/' },
+						{ label: '9.14 课程笔记', link: '/cybersecurity-and-data-security/9-14-course-note/' },
 					],
 				},
 			],
