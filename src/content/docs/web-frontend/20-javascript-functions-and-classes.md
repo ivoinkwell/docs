@@ -37,11 +37,11 @@ function ball(x, y){
 
 ```python
 class Ball():
-	def __init__(x, y):
-		this.x = x
-		this.y = y
-	def ball():
-		return this.x + this.y
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+	def ball(self):
+		return self.x + self.y
 ```
 
 这里的 `this` 方法相较于 Python 中的 class 是否有些无病呻吟的感觉？是的，`this` 本身可以做变量与全局隔离，但是现在更多是为了快捷调用的写法，都已经在 `function()` 内隔离了，你调用方法不写里面不行，写里面你还怎么 `new` 呢？
