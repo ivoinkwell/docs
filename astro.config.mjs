@@ -118,6 +118,7 @@ export default defineConfig({
 						{ label: '17 - switch语句', link: '/web-frontend/17-javascript-switch/' },
 						{ label: '18 - 函数', link: '/web-frontend/18-javascript-functions/' },
 						{ label: '19 - 数组与对象', link: '/web-frontend/19-javascript-arrays-two-dimensional-arrays-and-objects/' },
+						{ label: '20 - Javascript 函数与类', link: '/web-frontend/20-javascript-functions-and-classes/' },
 					],
 				},
 				{
