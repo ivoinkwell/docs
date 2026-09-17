@@ -92,6 +92,7 @@ export default defineConfig({
 						{ label: '01 - Python及开发环境安装', link: '/python-study-notes/01-python-and-development-environment-installation/' },
 						{ label: '02 - Python输入输出与变量', link: '/python-study-notes/02-python-input-output-and-variables/' },
 						{ label: '03 - Python 输入输出与变量案例练习', link: '/python-study-notes/03-python-input-output-and-variable-case-studies/' },
+						{ label: '04 - 分支语句', link: '/python-study-notes/04-branch-statements/' },
 					],
 				},
 				{
