@@ -139,6 +139,15 @@ mysql -uroot -p < /root/dormitory.sql
 jdbc.url=jdbc:mysql://localhost:3306/dormitory?useUnicode=true&characterEncoding=utf-8&useSSL=false
 ```
 
+本机访问虚拟机使用的不是本地回环地址，需要使用 `0.0.0.0` 监听，修改这个文件 `/root/tomcat/conf/server.xml`
+
+```xml
+<Connector port="8080" protocol="HTTP/1.1"
+           address="0.0.0.0" # [!code ++]
+           connectionTimeout="20000"
+           redirectPort="8443" />
+```
+
 运行 `/bin/startup.sh`，访问 `8080` ，使用 `admin / admin` 进行登录
 
 ![](https://pic.ivoinkwell.xyz/file/docs/software-testing-study-notes/00-dormitory-management-system-environment-setup-and-deployment/00-dormitory-management-system-environment-setup-and-deployment-1.webp)
