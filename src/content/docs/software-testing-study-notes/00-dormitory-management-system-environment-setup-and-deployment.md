@@ -190,3 +190,114 @@ systemctl enable tomcat.service
 ```
 
 确保重启可以登录即可
+
+## 更改 VMware 虚拟机网卡，使局域网机器访问
+
+在教学环节教师机与学生机是一个连接内网，所以学生机可以访问教师机，如果虚拟机部署在教师机器上，除了教师机本机，其他机器是无法访问虚拟机的，现在目前有这样的两种方案：
+
+> - **虚拟机加入局域网：** 将网卡改为桥接模式并且分配未用到的 IP 地址
+> - **端口转发：** 在 VMware 中设置将虚拟机的端口转发到教师机上
+
+### 虚拟机加入局域网
+
+首先是更改虚拟机的网络连接模式
+
+![](https://pic.ivoinkwell.xyz/file/docs/software-testing-study-notes/00-dormitory-management-system-environment-setup-and-deployment/00-dormitory-management-system-environment-setup-and-deployment-3.webp)
+
+更改完成之后需要给虚拟机分配一个固定 IP
+
+查看网卡名
+
+```bash
+ifconfig
+```
+
+编辑网络配置文件
+
+```bash
+vim /etc/sysconfig/network-scripts/ifcfg-你的网卡名字
+```
+
+找到类似配置进行更改
+
+```bash
+BOOTPROTO="static" # 使用静态IP地址，默认为dhcp   
+IPADDR="192.168.1.251" # 设置的静态IP地址
+NETMASK="255.255.255.0" # 子网掩码 
+GATEWAY="192.168.1.1" # 网关地址 
+DNS1="223.5.5.5" # DNS服务器（此设置没有用到，所以我的里面没有添加）
+
+ONBOOT=yes  #设置网卡启动方式为 开机启动 并且可以通过系统服务管理器 systemctl 控制网卡
+```
+
+重新导入网络配置
+
+```bash
+/etc/init.d/network reload
+```
+
+重启网卡服务
+
+```bash
+systemctl restart network.service
+```
+
+### 端口转发
+
+首先还是要更改一个静态 IP ，确保 DHCP 不会因为租期到期而改变
+
+查看网卡名
+
+```bash
+ifconfig
+```
+
+编辑网络配置文件
+
+```bash
+vim /etc/sysconfig/network-scripts/ifcfg-你的网卡名字
+```
+
+找到类似配置，按照自己 VMware 网卡设置进行更改
+
+![](https://pic.ivoinkwell.xyz/file/docs/software-testing-study-notes/00-dormitory-management-system-environment-setup-and-deployment/00-dormitory-management-system-environment-setup-and-deployment-4.webp)
+
+```bash
+BOOTPROTO="static" # 使用静态IP地址，默认为dhcp   
+IPADDR="192.168.24.251" # 设置的静态IP地址
+NETMASK="255.255.255.0" # 子网掩码 
+GATEWAY="192.168.23.2" # 网关地址 
+DNS1="223.5.5.5" # DNS服务器（此设置没有用到，所以我的里面没有添加）
+
+ONBOOT=yes  #设置网卡启动方式为 开机启动 并且可以通过系统服务管理器 systemctl 控制网卡
+```
+
+重新导入网络配置
+
+```bash
+/etc/init.d/network reload
+```
+
+重启网卡服务
+
+```bash
+systemctl restart network.service
+```
+
+开启端口转发
+
+![](https://pic.ivoinkwell.xyz/file/docs/software-testing-study-notes/00-dormitory-management-system-environment-setup-and-deployment/00-dormitory-management-system-environment-setup-and-deployment-5.webp)
+
+在打开界面操作
+
+![](https://pic.ivoinkwell.xyz/file/docs/software-testing-study-notes/00-dormitory-management-system-environment-setup-and-deployment/00-dormitory-management-system-environment-setup-and-deployment-6.webp)
+
+在接下来打开窗口操作
+
+![](https://pic.ivoinkwell.xyz/file/docs/software-testing-study-notes/00-dormitory-management-system-environment-setup-and-deployment/00-dormitory-management-system-environment-setup-and-deployment-7.webp)
+
+下面创建端口转发
+
+![](https://pic.ivoinkwell.xyz/file/docs/software-testing-study-notes/00-dormitory-management-system-environment-setup-and-deployment/00-dormitory-management-system-environment-setup-and-deployment-8.webp)
+
+填写完成保存即可完成，在同局域网访问即可
