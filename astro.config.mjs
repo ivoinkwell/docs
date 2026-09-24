@@ -180,6 +180,7 @@ export default defineConfig({
 					items: [
 						{ label: '6.15 数据安全刷题笔记', link: '/cybersecurity-and-data-security/data-security-6-15-note/' },
 						{ label: '9.14 课程笔记', link: '/cybersecurity-and-data-security/9-14-course-note/' },
+						{ label: '2026.09.24 参赛反思笔记', link: '/cybersecurity-and-data-security/20260924-reflection-notes' }
 					],
 				},
 			],
