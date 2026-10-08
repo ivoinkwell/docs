@@ -94,6 +94,7 @@ export default defineConfig({
 						{ label: '03 - Python 输入输出与变量案例练习', link: '/python-study-notes/03-python-input-output-and-variable-case-studies/' },
 						{ label: '04 - 分支语句', link: '/python-study-notes/04-branch-statements/' },
 						{ label: '05 - 循环语句', link: '/python-study-notes/05-loop-statements/' },
+						{ label: '06 - 字符串', link: '/python-study-notes/06-string' },
 					],
 				},
 				{
