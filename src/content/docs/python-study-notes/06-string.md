@@ -8,7 +8,7 @@ title: 字符串
 
 一共有三种表达形式：**`printf-stylr formatting`**，**`str.fromatting`** 和 **`f-string`**
 
-### `printf-stylr formatting`
+### `printf-style formatting`
 
 我接触计算机的第一个自学语言就是 C 语言，其实很意外的一点就是 Python 竟然会有类似 C 语言的输出方式，当然，这个肯定是最不方便的输出方式，毕竟一个脚本语言更多是用于简单脚本而非像 C 语言更偏向底层而需要的稳定，自然浅显易懂和方便书写会更重要，但是这种输出格式也是有必要去记录一下的
 
