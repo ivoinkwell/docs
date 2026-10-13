@@ -53,7 +53,7 @@ int main(void) {
 
 可能需要记忆的就是输出的一个格式问题
 
-## `str.fromatting`
+### `str.fromatting`
 
 这个相对之前的，写法会更宽泛一些，他的占位符已经不再是 `%d` 这样的数据类型，而是更好理解的 `{}`，所以可以写成这样
 
@@ -86,3 +86,127 @@ print("姓名是：{name}, 年龄是：{age}".format(age=age, name=name))
 ```python
 print(f"姓名是：{name}, 年龄是：{age}")
 ```
+
+## 字符串的常见操作
+
+相比于其他的语言的实现方式，Python 会更简单，不需要理解类似于 **`遍历`** 这样的非常专业的东西就可以达到自己想要达到的目的
+
+### 案例
+
+我想以 **`replace()`** 这个函数的作用来做一个例子，例如这样一句话
+
+```text
+All things Are difficult before they Are easy.
+```
+
+对于正常语言的实现逻辑就是遍历并将其转移至新的字符串
+
+```python
+def fix_capitalization(sentence):
+    """
+    将句子中不该大写的单词转换为小写
+    规则：句首单词首字母大写，其余单词全部小写
+    """
+    result = ""
+    word_start = 0          # 当前单词的起始位置
+    word_count = 0          # 记录这是第几个单词
+    i = 0
+    n = len(sentence)
+    
+    while i <= n:
+        # 遇到空格或到达末尾，说明一个单词结束
+        if i == n or sentence[i] == ' ':
+            if i > word_start:  # 确保不是连续空格
+                word = sentence[word_start:i]
+                word_count += 1
+                
+                if word_count == 1:
+                    # 第一个单词：首字母大写，其余小写
+                    new_word = to_upper(word[0]) + to_lower(word[1:])
+                else:
+                    # 其他单词：全部小写
+                    new_word = to_lower(word)
+                
+                result += new_word
+            
+            if i < n:
+                result += ' '  # 保留空格
+            word_start = i + 1
+        i += 1
+    
+    return result
+
+
+def to_lower(s):
+    """将字符串中所有大写字母转为小写（不使用 lower()）"""
+    result = ""
+    for ch in s:
+        # 利用 ASCII 码：'A'=65, 'Z'=90, 大小写相差 32
+        if 'A' <= ch <= 'Z':
+            result += chr(ord(ch) + 32)
+        else:
+            result += ch
+    return result
+
+
+def to_upper(ch):
+    """将单个字符转为大写（不使用 upper()）"""
+    if 'a' <= ch <= 'z':
+        return chr(ord(ch) - 32)
+    return ch
+
+
+# 测试
+sentence = "All things Are difficult before they Are easy."
+print("原句:", sentence)
+print("修正:", fix_capitalization(sentence))
+```
+
+但是有了内置函数，就会非常的简单
+
+```python
+s = 'All things Are difficult before they Are easy.'
+print(s.replace('Are', 'are'))
+```
+
+所以这些内置函数非常有必要去记录以下，会比不使用省时省力很多
+
+### `find()`
+
+根据这个函数的名字也可以知道，**`find()`** 函数是用于字符串的查找，其中有三个参数
+
+```python
+str.find([需要查找的字符串], [起始索引的索引值], [结束索引的索引值])
+```
+
+其中 **`str`** 是一个字符串，`起始索引的索引值` 和 `结束索引的索引值` 为参数的可选项
+
+### `replace()`
+
+同样根据名字，翻译过来也就是替换的意思，所以 **`replace()`** 函数是用于字符串替换的
+
+```python
+str.replace([被替换的旧子串], [替换成的新子串], [最大替换次数])
+```
+
+其中 **`最大替换次数`** 有默认值，也就是全部替换，如果要指定次数才需要填写这个参数
+
+### `split()`
+
+根据名字，翻译过来也就是分割的意思，所以 **`split()`** 函数是用于字符串分割的
+
+```python
+str.split([分隔符], [最大分割次数])
+```
+
+其中 **`最大分割次数`** 和 `replace()` 的是一样的，也是可选项，只有在需要指定次数的时候才需要填写
+
+### `join()`
+
+名字翻译过来也就是添加的意思，所以 **`join()`** 函数是用于字符串拼接的
+
+```python
+[连接符].join([可迭代对象])
+```
+
+可以理解为在 **`可迭代对象`** 中插入 **`连接符`**，所以都是必要的值
