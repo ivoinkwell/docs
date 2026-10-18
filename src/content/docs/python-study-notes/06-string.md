@@ -6,7 +6,7 @@ title: 字符串
 
 ## 格式化输出
 
-一共有三种表达形式：**`printf-stylr formatting`**，**`str.fromatting`** 和 **`f-string`**
+一共有三种表达形式：**`printf-style formatting`**，**`str.fromatting`** 和 **`f-string`**
 
 ### `printf-style formatting`
 
