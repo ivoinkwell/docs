@@ -95,6 +95,7 @@ export default defineConfig({
 						{ label: '04 - 分支语句', link: '/python-study-notes/04-branch-statements/' },
 						{ label: '05 - 循环语句', link: '/python-study-notes/05-loop-statements/' },
 						{ label: '06 - 字符串', link: '/python-study-notes/06-string' },
+						{ label: '07 - 列表', link: '/python-study-notes/07-list' },
 					],
 				},
 				{
