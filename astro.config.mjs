@@ -98,6 +98,14 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'C 学习笔记',
+					collapsed: true,
+					items: [
+						{ label: '总览', link: '/c-study-notes/' },
+						{ label: '01 - Python及开发环境安装', link: '/c-study-notes/01-c-and-the-development-environment/' },
+					],
+				},
+				{
 					label: 'Web 前端学习笔记',
 					collapsed: true,
 					items: [
