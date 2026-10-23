@@ -103,7 +103,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: '总览', link: '/c-study-notes/' },
-						{ label: '01 - Python及开发环境安装', link: '/c-study-notes/01-c-and-the-development-environment/' },
+						{ label: '01 - C 与开发环境', link: '/c-study-notes/01-c-and-the-development-environment/' },
 						{ label: '02 - 程序入口与函数', link: '/c-study-notes/02-program-entry-points-and-functions/' },
 					],
 				},
