@@ -82,3 +82,132 @@ print(string)
 ```
 
 ![](https://pic.ivoinkwell.xyz/file/docs/python-study-notes/07-list/07-list-4.webp)
+
+## 列表元素方法
+
+### 添加元素 - `append()`
+
+首先要定义一个数组
+
+```python
+list1 = [0, 1, 2, 3]
+```
+
+先看一下说明
+
+```python
+help(list.append)
+```
+
+```text
+Help on method_descriptor:
+
+append(self, object, /) unbound builtins.list method
+    Append object to the end of the list.
+...skipping...
+Help on method_descriptor:
+
+append(self, object, /) unbound builtins.list method
+    Append object to the end of the list.
+```
+
+也就是将要加入的内容填入函数当中的参数
+
+```python
+list1.append(4)
+print(list1)
+```
+
+看一下结果
+
+![](https://pic.ivoinkwell.xyz/file/docs/python-study-notes/07-list/07-list-5.webp)
+
+已经将 `4` 添加进去了
+
+如果想依次添加多个，例如 `[0, 1, 2, 3, 4, [5, 6, 7, 8, 9]]`
+
+```python
+list1.append([5, 6, 7, 8, 9])
+print(list1)
+```
+
+但是我现在不想要这个大括号
+
+```python
+for i in range(4, 10):
+    list1.append(i)
+print(list1)
+```
+
+### 将元素逐一添加至末尾 - `extend()`
+
+再定义一个列表
+
+```python
+list2 = []
+```
+
+先看一下 `extend()` 函数的参数
+
+```text
+extend(self, iterable, /) unbound builtins.list method
+    Extend list by appending elements from the iterable.
+```
+
+里面是要一个可以迭代的参数，比如单词
+
+```python
+word = 'Python'
+list2.extend(word)
+print(list2)
+```
+
+看一下结果
+
+![](https://pic.ivoinkwell.xyz/file/docs/python-study-notes/07-list/07-list-6.webp)
+
+已经将文字元素分开加入列表
+
+### 列表中插入 - `insert()` 
+
+再定义一个列表
+
+```python
+list3 = ['I', 'Python']
+```
+
+现在想要插入一个 `love`
+
+```python
+list3.insert(1, 'love')
+print(list3)
+```
+
+运行结果如下
+
+![](https://pic.ivoinkwell.xyz/file/docs/python-study-notes/07-list/07-list-7.webp)
+
+### 删除 - del
+
+删除列表一个元素
+
+```python
+del list3[1]
+```
+
+删除一个列表
+
+```python
+del list3
+```
+
+### 删除某个元素的第一个 - `remove()`
+
+```python
+list2.remove('P')
+print(list2)
+```
+
+结果如下
+
+![](https://pic.ivoinkwell.xyz/file/docs/python-study-notes/07-list/07-list-8.webp)
