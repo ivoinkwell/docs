@@ -211,3 +211,24 @@ print(list2)
 结果如下
 
 ![](https://pic.ivoinkwell.xyz/file/docs/python-study-notes/07-list/07-list-8.webp)
+
+## 列表推导式
+
+现在我有这样的一个列表
+
+```python
+list10 = [1, 2, 3, "Hello"]
+```
+
+我现在想要把 `list10` 中的内容复制到 `list11` 当中，都会使用 `for` 循环语句去写
+
+```python
+for i in list10:
+    list11.append(i)
+```
+
+但是还有更简单的方法，就是把这个 `for` 循环写进列表赋值语句当中，也就是列表推导式
+
+```python
+list11 = [i for i in list10]
+```
