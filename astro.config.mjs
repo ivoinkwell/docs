@@ -97,6 +97,7 @@ export default defineConfig({
 						{ label: '06 - 字符串', link: '/python-study-notes/06-string' },
 						{ label: '07 - 列表', link: '/python-study-notes/07-list' },
 						{ label: '08 - 字典', link: '/python-study-notes/08-dict' },
+						{ label: '09 - 函数', link: '/python-study-notes/09-function' },
 					],
 				},
 				{
