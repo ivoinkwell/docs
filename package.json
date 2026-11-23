@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "@astrojs/starlight": "0.42.6",
+    "@shikijs/engine-oniguruma": "^4.6.0",
+    "@shikijs/types": "^4.6.0",
     "astro": "7.4.2",
+    "ccount": "^2.0.1",
+    "destr": "^2.0.5",
     "sharp": "^0.35.3",
     "starlight-theme-nova": "^0.12.2"
   },

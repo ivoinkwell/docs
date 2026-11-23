@@ -98,6 +98,7 @@ export default defineConfig({
 						{ label: '07 - 列表', link: '/python-study-notes/07-list' },
 						{ label: '08 - 字典', link: '/python-study-notes/08-dict' },
 						{ label: '09 - 函数', link: '/python-study-notes/09-function' },
+						{ label: '10 - 函数和pygame包', link: '/python-study-notes/10-function-and-pygame' },
 					],
 				},
 				{
