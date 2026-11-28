@@ -10,8 +10,8 @@ title: 自动化测试
 
 基于 Blink 内核的浏览器都有自己家的驱动，用于自动化控制，首先就需要下载对应的浏览器自动化的驱动程序，我提供 Edge 和 Chrome 的驱动下载地址
 
-> **`Edge`**: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH&cs=3397636917
-> **`Chrome`**: https://googlechromelabs.github.io/chrome-for-testing/
+> - **`Edge`**: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH&cs=3397636917
+> - **`Chrome`**: https://googlechromelabs.github.io/chrome-for-testing/
 
 下载后并添加进环境变量当中
 
