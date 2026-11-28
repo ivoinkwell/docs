@@ -146,6 +146,7 @@ export default defineConfig({
 						{ label: '01 - 根据需求说明书编写测试用例', link: '/software-testing-study-notes/01-write-test-cases-based-on-the-requirements-specification/' },
 						{ label: '02 - 利用等价类划分编写测试用例', link: '/software-testing-study-notes/02-write-test-cases-using-equivalence-class-division/' },
 						{ label: '03 - 利用边界值划分法设计测试用例', link: '/software-testing-study-notes/03-test-cases-are-designed-using-the-boundary-value-subdivision-method/' },
+						{ label: '04 - 自动化测试', link: '/software-testing-study-notes/04-automated-testing/' },
 					],
 				},
 				{
